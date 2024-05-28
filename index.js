@@ -11,10 +11,10 @@ const port = 3000;
 
 main()
 async function main() {
+  console.log("URL ::",`mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/test?authSource=admin`);
   await mongoose.connect(`mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/test?authSource=admin`)
   .then(()=>{
     console.log("Connection established successfully!!");
-    console.log("URL ::",`mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/test?authSource=admin`);
   }).catch(err => {
     console.log(err)
     setTimeout(main, 5000);
