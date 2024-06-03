@@ -4,6 +4,7 @@ services:
     ports:
     - "80:80"
   node-app:
+    image: lokeshchhatani/node-app
     build: 
       context: .
       args:
